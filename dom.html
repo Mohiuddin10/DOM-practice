@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM JS</title>
+</head>
+<body>
+    <h1>Hello from DOM</h1>
+    <h3 id="text">Default text</h3>
+    <button onclick="handleOnClick()">Change default text</button>
+    <button id="changeDefText">Change def Text</button>
+    <br>
+    <p id="userName">User Name</p>
+    <input id="input-text" type="text">
+    <button id="update-text">Update</button>
+    
+
+    <script>
+        const changeText = document.getElementById('changeDefText');
+        changeText.addEventListener('click', function(){
+            document.getElementById('text').innerText = 'Hello this is next btn text';
+        })
+
+        const handleOnClick = () => {
+            const defText = document.getElementById('text');
+            defText.innerText = 'Hello from JS dom';
+        }
+
+        document.getElementById('update-text').addEventListener('click', function(){
+            const inputField = document.getElementById('input-text').value;
+            document.getElementById('userName').innerText = inputField;
+        })
+    </script>
+</body>
+</html>
